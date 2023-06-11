@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Counter</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         text-align: center;
+         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+
+      nav {
+         background: linear-gradient(to right, rgb(147, 67, 156), black);
+         height: 10vh;
+         color: antiquewhite;
+         font-size: 6vw;
+         padding-top: 2vw;
+      }
+
+      body {
+         position: relative;
+         height: 100vh;
+         width: 100vw;
+         background-color: bisque;
+      }
+
+      .but {
+         height: 10vh;
+         width: 24vw;
+      }
+
+      .a {
+         animation: rot 20s linear 0s infinite forwards;
+         z-index: 1;
+         border-radius: 4%;
+         background: linear-gradient(to right, red, orange, deeppink, blue);
+      }
+
+      .val {
+         position: absolute;
+         bottom: 10vh;
+         left: 49%;
+         color: crimson;
+         font-size: 12vh;
+         text-shadow: 2px 2px 5px black;
+      }
+
+      @keyframes rot {
+         0% {
+            rotate: 0deg;
+         }
+
+         50% {
+            rotate: 180deg;
+         }
+
+         100% {
+            rotate: 360deg;
+         }
+      }
+
+      .con {
+         position: absolute;
+         top: 20%;
+         left: 38%;
+         width: 24vw;
+         height: 24vw;
+         border-radius: 50%;
+         border: 2px dotted black;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         animation: col 20s linear 0s infinite reverse forwards;
+      }
+
+      @keyframes col {
+         0% {
+            background: radial-gradient(white, yellow, red);
+         }
+
+         100% {
+            background: radial-gradient(white, blue, black);
+         }
+      }
+   </style>
+</head>
+
+<body>
+   <nav>
+      <h6>Count iT</h6>
+   </nav>
+   <div class="con">
+      <button class="but a"></button>
+   </div>
+   <br>
+   <p class="val">0</p>
+   <script>
+      let value = 0;
+      document.getElementsByClassName("con")[0].addEventListener('click', () => {
+         value++;
+         document.getElementsByClassName("val")[0].innerHTML = value;
+      })
+   </script>
+</body>
+
+</html>
